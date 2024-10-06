@@ -1231,7 +1231,7 @@ if(WIN32)
       # This is slightly messy, but single target generators like ninja will not have the
       # CMAKE_CFG_INTDIR variable and multitarget generators like msbuild will not have
       # CMAKE_BUILD_TYPE. This can be simplified by target_link_options and the $<CONFIG>
-      # generator expression in newer cmake (2.13+) but until that time this fill have suffice.
+      # generator expression in newer cmake (3.13+) but until that time this will have to suffice.
       if(CMAKE_BUILD_TYPE)
         set_property(TARGET blender APPEND_STRING PROPERTY LINK_FLAGS  " /PDBSTRIPPED:${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/blender_public.pdb")
       else()
